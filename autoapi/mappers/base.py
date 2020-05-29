@@ -10,7 +10,7 @@ from sphinx.util.console import darkgreen, bold
 from sphinx.util.osutil import ensuredir
 from sphinx.util.docstrings import prepare_docstring
 import sphinx.util.logging
-import unidecode
+import text_unidecode
 
 from ..settings import API_ROOT, TEMPLATE_DIR
 
@@ -121,7 +121,7 @@ class PythonMapperBase(object):
         * Break up the string as paths
         """
         slug = self.name
-        slug = unidecode.unidecode(slug)
+        slug = text_unidecode.unidecode(slug)
         slug = slug.replace("-", "")
         slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
         return os.path.join(*slug.split("."))

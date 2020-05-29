@@ -4,7 +4,7 @@ import subprocess
 import traceback
 import shutil
 from collections import defaultdict
-import unidecode
+import text_unidecode
 
 import yaml
 from sphinx.util.osutil import ensuredir
@@ -365,7 +365,7 @@ class DotNetPythonMapper(PythonMapperBase):
             slug = self.name.split("(")[0]
         except IndexError:
             pass
-        slug = unidecode.unidecode(slug)
+        slug = text_unidecode.unidecode(slug)
         slug = slug.replace("-", "")
         slug = re.sub(r"[^\w\.]+", "-", slug).strip("-")
         return os.path.join(*slug.split("."))

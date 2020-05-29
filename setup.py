@@ -23,7 +23,7 @@ setup(
         "Jinja2",
         "PyYAML",
         "sphinx>=1.6",
-        "unidecode",
+        "text-unidecode",
     ],
     extras_require={
         "go": ["sphinxcontrib-golangdomain"],
